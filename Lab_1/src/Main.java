@@ -1,19 +1,26 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-//        perfectNumber(30);
 
         Scanner myObj = new Scanner(System.in);
         System.out.println("Enter number: ");
 
         int num = myObj.nextInt();
+        ArrayList<Integer> perf;
+
         System.out.println("Perfect numbers from 1 to " + num);
-        perfectNumber(num);
+        perf = perfectNumber(num);
+
+        for (Integer i : perf) {
+            System.out.println(i);
+        }
     }
 
-    static void perfectNumber(int num) {
+    static ArrayList<Integer> perfectNumber(int num) {
         int sum;
+        ArrayList<Integer> perfect = new ArrayList<>();
 
         for (int i = 1; i <= num; i++) {
             sum = 0;
@@ -24,8 +31,9 @@ public class Main {
             }
 
             if (sum == i) {
-                System.out.println(i);
+                perfect.add(i);
             }
         }
+        return perfect;
     }
 }
