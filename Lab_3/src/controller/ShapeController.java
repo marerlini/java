@@ -12,11 +12,11 @@ public class ShapeController {
     }
 
     public void run() {
-        model.initializeRandomShapes(10); // Ініціалізуємо один раз на старті
+        model.initializeRandomShapes(10);
 
         boolean running = true;
         while (running) {
-            int choice = view.getMenuChoice(); // Отримуємо вибір від користувача
+            int choice = view.getMenuChoice();
 
             switch (choice) {
                 case 1:
