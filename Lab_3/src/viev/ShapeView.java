@@ -7,7 +7,7 @@ public class ShapeView {
     public void printShapes(Shape[] shapes){
         System.out.println("Фігури:");
         for (Shape shape : shapes) {
-            shape.draw();
+            System.out.println(shape.draw());
         }
     }
 

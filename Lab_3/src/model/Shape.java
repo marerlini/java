@@ -17,7 +17,7 @@ public abstract class Shape implements Drawable {
     }
 
     @Override
-    public void draw() {
-        System.out.println(this.toString());
+    public String draw() {
+        return this.toString();
     }
 }
