@@ -21,11 +21,12 @@ public class ShapeView {
 
     public String getShapeTypeInput() {
         System.out.print("Введіть тип фігури (наприклад, Circle, Rectangle, Triangle): ");
+
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
 
-    public int getMenuChoice() {
+    public String getMenuChoice() {
         System.out.println("\n===== МЕНЮ =====");
         System.out.println("1. Вивести всі фігури");
         System.out.println("2. Сортувати за площею");
@@ -36,6 +37,6 @@ public class ShapeView {
         System.out.print("Ваш вибір: ");
 
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        return scanner.nextLine();
     }
 }

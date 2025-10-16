@@ -16,30 +16,30 @@ public class ShapeController {
 
         boolean running = true;
         while (running) {
-            int choice = view.getMenuChoice();
+            String choice = view.getMenuChoice();
 
             switch (choice) {
-                case 1:
+                case "1":
                     view.printMessage("--- Поточний список фігур ---");
                     view.printShapes(model.getShapes());
                     break;
-                case 2:
+                case "2":
                     model.sortByArea();
                     view.printMessage("--- Фігури відсортовано за площею ---");
                     break;
-                case 3:
+                case "3":
                     model.sortByColor();
                     view.printMessage("--- Фігури відсортовано за кольором ---");
                     break;
-                case 4:
+                case "4":
                     view.printResult("Загальна площа всіх фігур: ", model.calculateTotalArea());
                     break;
-                case 5:
+                case "5":
                     String shapeType = view.getShapeTypeInput();
                     double specificArea = model.calculateTotalAreaByType(shapeType);
                     view.printResult("Загальна площа для '" + shapeType + "': ", specificArea);
                     break;
-                case 0:
+                case "0":
                     running = false;
                     view.printMessage("--- Програму завершено ---");
                     break;
