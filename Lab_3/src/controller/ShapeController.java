@@ -1,6 +1,8 @@
 package controller;
 import model.ShapeModel;
+import model.Shape;
 import viev.ShapeView;
+import model.IOProcessor;
 
 public class ShapeController {
     private final ShapeModel model;
@@ -12,7 +14,6 @@ public class ShapeController {
     }
 
     public void run() {
-        model.initializeRandomShapes(10);
 
         boolean running = true;
         while (running) {
@@ -35,13 +36,31 @@ public class ShapeController {
                     view.printResult("Загальна площа всіх фігур: ", model.calculateTotalArea());
                     break;
                 case "5":
+                    view.printMessage("Введіть тип фігури (наприклад, Circle, Rectangle, Triangle): ");
                     String shapeType = view.getShapeTypeInput();
                     double specificArea = model.calculateTotalAreaByType(shapeType);
                     view.printResult("Загальна площа для '" + shapeType + "': ", specificArea);
                     break;
+                case "6":
+                    view.printMessage("Введіть шлях до файлу(Lab_3/testShapes): ");
+                    String pathToExFile = view.getShapeTypeInput();
+                    IOProcessor.exportShapes(pathToExFile, model.getShapes());
+                    view.printMessage("--- Дані експортовано успішно в файл ---");
+                    break;
+                case "7":
+                    view.printMessage("Введіть шлях до файлу(Lab_3/testShapes): ");
+                    String pathToImFile = view.getShapeTypeInput();
+                    Shape[] importedShapes = IOProcessor.importShapes(pathToImFile);
+                    model.setShapes(importedShapes);
+                    view.printMessage("--- Дані імпортовано успішно в файл ---");
+                    break;
+                case "8":
+                    model.initializeRandomShapes(10);
+                    view.printMessage("--- Згенеровано 10 фігур ---");
+                    break;
                 case "0":
                     running = false;
-                    view.printMessage("--- Програму завершено ---");
+                    view.printMessage("--- Дані імпортовано успішно ---");
                     break;
                 default:
                     view.printMessage("--- Невірний вибір, спробуйте ще раз ---");

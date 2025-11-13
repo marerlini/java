@@ -42,6 +42,10 @@ public class ShapeModel {
         return shapes;
     }
 
+    public void setShapes(Shape[] shapes) {
+        this.shapes = shapes;
+    }
+
     public double calculateTotalArea(){
         double TotalArea = 0;
 

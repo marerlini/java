@@ -1,6 +1,7 @@
 package model;
+import java.io.Serializable;
 
-public abstract class Shape implements Drawable {
+public abstract class Shape implements Drawable, Serializable{
     protected String shapeColor;
 
     public Shape(String shapeColor){

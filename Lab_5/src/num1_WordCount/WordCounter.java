@@ -11,7 +11,7 @@ public class WordCounter {
 
     public static void initializeWordsCounting(Scanner sc){
         System.out.println("\n------------------------------------------------");
-        System.out.println("\n1. Визначення рядка з найбільшою кількістю слів");
+        System.out.println("Визначення рядка з найбільшою кількістю слів");
         System.out.print("Шлях до файлу(Lab_5/TestFiles/Words.txt): ");
         String filePath = sc.nextLine();
 

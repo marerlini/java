@@ -20,8 +20,6 @@ public class ShapeView {
     }
 
     public String getShapeTypeInput() {
-        System.out.print("Введіть тип фігури (наприклад, Circle, Rectangle, Triangle): ");
-
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }
@@ -33,6 +31,9 @@ public class ShapeView {
         System.out.println("3. Сортувати за кольором");
         System.out.println("4. Показати загальну площу");
         System.out.println("5. Показати загальну площу для певного виду фігур");
+        System.out.println("6. Експортувати фігури");
+        System.out.println("7. Імпортувати фігури");
+        System.out.println("8. Згенерувати 10 випадкових фігур");
         System.out.println("0. Вихід");
         System.out.print("Ваш вибір: ");
 

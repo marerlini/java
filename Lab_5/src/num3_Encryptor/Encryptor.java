@@ -9,10 +9,10 @@ public class Encryptor{
 
     public static void inputEncryptParams(Scanner sc){
 
-        System.out.print("\nВведіть символи на зашифрування: ");
+        System.out.print("\nСимвол-ключ шифрування: ");
         String symbolsString = sc.nextLine();
 
-        System.out.print("\nВведіть шлях до вихідного файлу: ");
+        System.out.print("\nШлях до файлу(Lab_5/TestFiles/Text.txt): ");
         String pathToFile = sc.nextLine();
         
         try{
@@ -23,14 +23,14 @@ public class Encryptor{
             return;
         }
 
-        System.out.println("Символи були успішно зашифровані у файл '" + pathToFile + "' !");
+        System.out.println("Символи успішно зашифровано в файл '" + pathToFile + "' !");
     }
 
     public static void inputDecryptParams(Scanner sc){        
 
         String decryptedCharacters;
 
-        System.out.print("\nВведіть шлях до файлу: ");
+        System.out.print("\nШлях до файлу: ");
         String pathToFile = sc.nextLine();
         
         try{
@@ -40,6 +40,6 @@ public class Encryptor{
             e.printStackTrace();
             return;
         }
-        System.out.println("Символи були успішно розшифорвані!\nРезультат: " + decryptedCharacters);
+        System.out.println("Символи успішно дешифорвані!\nРезультат: " + decryptedCharacters);
     }
 }

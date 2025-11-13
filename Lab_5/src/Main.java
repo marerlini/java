@@ -11,12 +11,11 @@ public class Main {
         int choice;
         while(true){
             
-            System.out.println("\n\tМеню: ");
+            System.out.println("\nМеню: ");
             System.out.println("1. Рядок з максимальною кількістю слів");
             System.out.println("2. Шифрування/душифрування символів");
             System.out.println("3. Підрахування частоти тегів на сторінці");
             System.out.println("0. Вихід");
-            System.out.print(" - ");
             choice = sc.nextInt();
             sc.nextLine();
 
