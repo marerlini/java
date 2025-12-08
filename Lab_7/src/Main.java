@@ -12,19 +12,17 @@ public class Main {
 
         System.out.println("Perfect numbers from 1 to " + num);
 
-        // Викликаємо метод
         List<Integer> perf = perfectNumber(num);
 
-        // Вивід теж можна зробити через лямбда-вираз (Method Reference)
         perf.forEach(System.out::println);
     }
 
     static List<Integer> perfectNumber(int num) {
-        return IntStream.rangeClosed(1, num)  // Генеруємо числа від 1 до num
-                .filter(n -> n > 0 && IntStream.range(1, n) // Лямбда: фільтруємо тільки "досконалі" числа
-                        .filter(divisor -> n % divisor == 0) // Знаходимо дільники
-                        .sum() == n)                         // Перевіряємо, чи сума дільників дорівнює числу
-                .boxed()                                     // Перетворюємо int на Integer для списку
-                .collect(Collectors.toList());               // Збираємо в List
+        return IntStream.rangeClosed(1, num)
+                .filter(n -> n > 0 && IntStream.range(1, n)
+                        .filter(divisor -> n % divisor == 0)
+                        .sum() == n)
+                .boxed()
+                .collect(Collectors.toList());
     }
 }
