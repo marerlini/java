@@ -19,7 +19,7 @@ public class Main {
 
     static List<Integer> perfectNumber(int num) {
         return IntStream.rangeClosed(1, num)
-                .filter(n -> n > 0 && IntStream.range(1, n)
+                .filter(n -> IntStream.range(1, n)
                         .filter(divisor -> n % divisor == 0)
                         .sum() == n)
                 .boxed()
